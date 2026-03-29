@@ -20,15 +20,19 @@ export default defineConfig({
       manifest: {
         name: 'Pomodoro Timer',
         short_name: 'Pomodoro',
-        description: 'A simple Pomodoro timer',
+        description: '集中力を高めるポモドーロタイマー。タスク管理と統計機能付き。',
         theme_color: '#1a1b26',
         background_color: '#1a1b26',
         display: 'standalone',
+        start_url: '/',
+        scope: '/',
+        lang: 'ja',
         icons: [
           { src: '/icon-192.png', sizes: '192x192', type: 'image/png' },
           { src: '/icon-512.png', sizes: '512x512', type: 'image/png' },
           { src: '/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
         ],
+        categories: ['productivity', 'utilities'],
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,mp3}'],
