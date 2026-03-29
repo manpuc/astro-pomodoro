@@ -1,0 +1,4 @@
+﻿
+> astro-pomodoro@0.0.1 astro E:\kuki\Documents\.Dev\Pomodoro\astro-pomodoro
+> astro "check"
+
