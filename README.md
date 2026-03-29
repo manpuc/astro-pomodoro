@@ -1,43 +1,69 @@
-# Astro Starter Kit: Minimal
+# 🍅 Pomodoro Timer
+
+集中力を高めるための高機能・モダンなポモドーロタイマー。タスク管理、統計機能、高度なカスタマイズ性を備えたPWA（Progressive Web App）です。
+
+## ✨ 特徴
+
+- 🕒 **ポモドーロタイマー**: 作業・小休憩・長休憩のサイクルを直感的に管理。
+- 📋 **タスク管理**: ドラッグ可能なパネルでタスクを管理し、完了状況を追跡。
+- 📊 **統計機能**: 作業セッションの結果を視覚化し、月間ポイントでモチベーションを維持。
+- 🎨 **高度なカスタマイズ**:
+  - タイマーの色（作業・休憩）を個別に設定可能。
+  - Google Fontsから好きなフォントを選択可能。
+  - ダークモード/ライトモードに完全対応（OS設定連動）。
+- 📱 **PWA (Progressive Web App)**: デスクトップやスマートフォンにアプリとしてインストール可能。オフラインでも動作。
+- 🧩 **自在なレイアウト**: デスクトップ環境ではタスク・統計パネルを自由に配置可能。
+- ⌨️ **キーボードショートカット**: `s`（開始）、`e`（停止）、`t`（タスクパネル）、`g`（統計パネル）などの操作に対応。
+
+## 🛠️ 技術スタック
+
+- **Framework**: [Astro 6](https://astro.build/)
+- **Frontend Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **PWA**: [@vite-pwa/astro](https://vite-pwa-org.netlify.app/frameworks/astro)
+- **Deployment**: [Vercel](https://vercel.com/)
+
+## 🚀 開発環境のセットアップ
+
+### 1. 依存関係のインストール
 
 ```sh
-npm create astro@latest -- --template minimal
+pnpm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### 2. ローカルサーバーの起動
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+pnpm dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+ブラウザで `http://localhost:4321` を開きます。
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### 3. ビルド
 
-Any static assets, like images, can be placed in the `public/` directory.
+```sh
+pnpm build
+```
 
-## 🧞 Commands
+##  Genie コマンド
 
-All commands are run from the root of the project, from a terminal:
+| コマンド | 内容 |
+| :--- | :--- |
+| `pnpm install` | 依存関係をインストール |
+| `pnpm dev` | ローカル開発サーバーを起動 |
+| `pnpm build` | 本番用ビルドを生成 (`./dist/`) |
+| `pnpm preview` | ビルド済みファイルをローカルでプレビュー |
+| `pnpm astro check` | TypeScriptの型チェックなどを実行 |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📱 PWAについて
 
-## 👀 Want to learn more?
+このアプリはPWAに対応しており、以下の機能が利用可能です：
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **オフライン動作**: キャッシュによりインターネット未接続でも利用可能。
+- **ホーム画面への追加**: ブラウザの設定やアプリ内の「インストール」ボタンから追加できます。
+- **プッシュ通知**: ブラウザの通知機能を使用して休憩の開始をお知らせします。
+
+---
+
+Developed with ❤️ for productivity.
