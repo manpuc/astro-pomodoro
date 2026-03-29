@@ -1,0 +1,539 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Tokyo Night Day Theme - Light */
+/* Based on folke/tokyonight.nvim day palette */
+/* bg:#e1e2e7 bg_dark:#d0d5e3 fg:#3760bf blue:#2e7de9 cyan:#007197 border:#b4b5b9 comment:#848cb5 */
+:root {
+  --background: #e1e2e7;
+  --foreground: #3760bf;
+  --card: #d0d5e3;
+  --card-foreground: #3760bf;
+  --popover: #d0d5e3;
+  --popover-foreground: #3760bf;
+  --primary: #2e7de9;
+  --primary-foreground: #e1e2e7;
+  --secondary: #c4c8da;
+  --secondary-foreground: #3760bf;
+  --muted: #c4c8da;
+  --muted-foreground: #848cb5;
+  --accent: #007197;
+  --accent-foreground: #e1e2e7;
+  --destructive: #f52a65;
+  --destructive-foreground: #e1e2e7;
+  --border: #b4b5b9;
+  --input: #b4b5b9;
+  --ring: #2e7de9;
+  --radius: 1.25rem;
+
+  /* Pomodoro specific colors */
+  --timer-work: #b15c00;
+  --timer-break: #587539;
+  --timer-long-break: #2e7de9;
+
+  /* Glass effect */
+  --glass-bg: rgb(225 226 231 / 0.7);
+  --glass-border: rgb(180 181 185 / 0.5);
+  --glass-shadow: rgb(55 96 191 / 0.1);
+
+  /* Chart colors */
+  --chart-1: #b15c00;
+  --chart-2: #587539;
+  --chart-3: #2e7de9;
+  --chart-4: #9854f1;
+  --chart-5: #f52a65;
+
+  --sidebar: #d0d5e3;
+  --sidebar-foreground: #3760bf;
+  --sidebar-primary: #2e7de9;
+  --sidebar-primary-foreground: #e1e2e7;
+  --sidebar-accent: #c4c8da;
+  --sidebar-accent-foreground: #3760bf;
+  --sidebar-border: #b4b5b9;
+  --sidebar-ring: #2e7de9;
+}
+
+/* Tokyo Night Theme - Dark */
+.dark {
+  --background: oklch(0.18 0.02 250);
+  --foreground: oklch(0.9 0.01 250);
+  --card: oklch(0.22 0.025 250);
+  --card-foreground: oklch(0.9 0.01 250);
+  --popover: oklch(0.22 0.025 250);
+  --popover-foreground: oklch(0.9 0.01 250);
+  --primary: oklch(0.7 0.12 250);
+  --primary-foreground: oklch(0.15 0.02 250);
+  --secondary: oklch(0.28 0.03 250);
+  --secondary-foreground: oklch(0.9 0.01 250);
+  --muted: oklch(0.28 0.03 250);
+  --muted-foreground: oklch(0.65 0.02 250);
+  --accent: oklch(0.7 0.1 180);
+  --accent-foreground: oklch(0.15 0.02 250);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.32 0.03 250);
+  --input: oklch(0.32 0.03 250);
+  --ring: oklch(0.7 0.12 250);
+
+  /* Pomodoro specific colors */
+  --timer-work: oklch(0.65 0.15 25);
+  --timer-break: oklch(0.7 0.12 160);
+  --timer-long-break: oklch(0.7 0.12 250);
+
+  /* Glass effect */
+  --glass-bg: oklch(0.22 0.025 250 / 0.6);
+  --glass-border: oklch(0.4 0.03 250 / 0.3);
+  --glass-shadow: oklch(0.1 0.02 250 / 0.3);
+
+  /* Chart colors */
+  --chart-1: oklch(0.65 0.15 25);
+  --chart-2: oklch(0.7 0.12 160);
+  --chart-3: oklch(0.7 0.12 250);
+  --chart-4: oklch(0.75 0.12 80);
+  --chart-5: oklch(0.65 0.1 320);
+
+  --sidebar: oklch(0.2 0.025 250);
+  --sidebar-foreground: oklch(0.9 0.01 250);
+  --sidebar-primary: oklch(0.7 0.12 250);
+  --sidebar-primary-foreground: oklch(0.15 0.02 250);
+  --sidebar-accent: oklch(0.28 0.03 250);
+  --sidebar-accent-foreground: oklch(0.9 0.01 250);
+  --sidebar-border: oklch(0.32 0.03 250);
+  --sidebar-ring: oklch(0.7 0.12 250);
+}
+
+@theme inline {
+  --font-sans: 'Zen Maru Gothic', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-timer-work: var(--timer-work);
+  --color-timer-break: var(--timer-break);
+  --color-timer-long-break: var(--timer-long-break);
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --color-glass-shadow: var(--glass-shadow);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    background-color: var(--background-custom, var(--background));
+    color: var(--foreground);
+    transition: background-color 0.3s ease;
+  }
+}
+
+/* Liquid Glass Effect - iOS 26 / manpuc.me inspired */
+.liquid-glass {
+  position: relative;
+  border-radius: 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 8px 32px -8px var(--glass-shadow),
+    0 4px 16px -4px oklch(0 0 0 / 0.08),
+    inset 0 1px 1px oklch(1 0 0 / 0.12);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 16px -6px oklch(1 0 0 / 0.18);
+  pointer-events: none;
+}
+
+/* Removed hover animation for panels - focus on content */
+
+/* Glass Button - manpuc.me inspired simple pop animation */
+.glass-button {
+  position: relative;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  box-shadow:
+    0 4px 12px -2px var(--glass-shadow),
+    0 2px 6px -2px oklch(0 0 0 / 0.06),
+    inset 0 1px 1px oklch(1 0 0 / 0.12);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+  transform: scale(1);
+  will-change: transform;
+}
+
+.glass-button:hover {
+  background: oklch(from var(--glass-bg) l c h / 0.85);
+  box-shadow:
+    0 6px 16px -4px var(--glass-shadow),
+    0 3px 8px -2px oklch(0 0 0 / 0.08),
+    inset 0 1px 1px oklch(1 0 0 / 0.2);
+  transform: scale(1.05);
+}
+
+.glass-button:active {
+  transform: scale(0.95);
+  box-shadow:
+    0 2px 6px -2px var(--glass-shadow),
+    inset 0 1px 1px oklch(1 0 0 / 0.1);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+/* Control button - manpuc.me theme toggle style pop animation */
+.control-button {
+  transform: scale(1);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.control-button:hover {
+  transform: scale(1.08);
+}
+
+.control-button:active {
+  transform: scale(0.92);
+  transition: transform 0.1s ease;
+}
+
+/* Ensure touch devices reset properly */
+@media (hover: none) {
+  .control-button:active {
+    transform: scale(0.9);
+  }
+
+  .control-button:focus {
+    transform: scale(1);
+  }
+}
+
+.control-button-main {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.2s ease;
+}
+
+.control-button-main:hover {
+  transform: scale(1.1);
+}
+
+.control-button-main:active {
+  transform: scale(0.9);
+}
+
+/* Container animation - manpuc.me inspired */
+.container-animate {
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.container-animate-enter {
+  animation: container-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.container-animate-exit {
+  animation: container-exit 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes container-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes container-exit {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+}
+
+/* Settings panel animations */
+.settings-overlay {
+  animation: overlay-enter 0.3s ease forwards;
+}
+
+.settings-overlay-exit {
+  animation: overlay-exit 0.3s ease forwards;
+}
+
+.settings-backdrop {
+  animation: backdrop-enter 0.3s ease forwards;
+}
+
+.settings-backdrop-exit {
+  animation: backdrop-exit 0.3s ease forwards;
+}
+
+.settings-panel-enter {
+  animation: panel-enter 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.settings-panel-exit {
+  animation: panel-exit 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes overlay-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes overlay-exit {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes backdrop-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes backdrop-exit {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes panel-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes panel-exit {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+}
+
+/* Panel exit animations */
+.panel-exit {
+  animation: panel-slide-exit 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes panel-slide-exit {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+/* Smooth layout transitions */
+.layout-transition {
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Timer display - fixed width to prevent jumping */
+.timer-display {
+  font-family: var(--font-geist-mono), 'Geist Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Icons - no individual animations, button handles all animation */
+
+/* Reduced motion */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Timer progress ring */
+.timer-ring {
+  transform-origin: center;
+}
+
+.timer-ring-progress {
+  transition: stroke-dashoffset 1s linear;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 3px;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
+
+/* Panel layout helper classes for easy adjustment */
+.panel-left {
+  /* Left panel - task list */
+}
+
+.panel-center {
+  /* Center panel - timer */
+}
+
+.panel-right {
+  /* Right panel - statistics */
+}
+
+/* Settings panel - enhanced liquid glass effect */
+.settings-panel {
+  border: none;
+  background: linear-gradient(
+    135deg,
+    oklch(from var(--glass-bg) l c h / 0.85) 0%,
+    oklch(from var(--glass-bg) l c h / 0.75) 50%,
+    oklch(from var(--glass-bg) l c h / 0.8) 100%
+  );
+  backdrop-filter: blur(40px) saturate(1.5);
+  -webkit-backdrop-filter: blur(40px) saturate(1.5);
+  box-shadow:
+    0 25px 50px -12px var(--glass-shadow),
+    0 12px 24px -8px oklch(0 0 0 / 0.15),
+    inset 0 1px 2px oklch(1 0 0 / 0.25),
+    inset 0 -1px 2px oklch(0 0 0 / 0.05),
+    0 0 0 1px var(--glass-border);
+}
+
+.settings-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(
+    180deg,
+    oklch(1 0 0 / 0.08) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.settings-panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    oklch(1 0 0 / 0.3) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  border-radius: 20px 20px 0 0;
+}
+
+/* Custom user CSS container - sandboxed */
+#user-custom-css {
+  /* User styles will be injected here safely */
+}
