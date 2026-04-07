@@ -1,0 +1,73 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: 'website' | 'article' | 'software';
+}
+
+const {
+  title = 'Pomodoro Timer | Focus & Productivity',
+  description = 'A minimalist, high-performance Pomodoro timer for focus and productivity. iOS-inspired design with customizable themes and local history.',
+  image = '/icon-512.png',
+  canonicalURL = Astro.url.href,
+  type = 'website',
+} = Astro.props;
+
+const siteName = 'Pomodoro';
+const twitterHandle = '@manpuc'; // Example/Placeholder
+---
+
+<!-- Global Metadata -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type === 'software' ? 'website' : type} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.site)} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content="ja_JP" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.site)} />
+{twitterHandle && <meta property="twitter:site" content={twitterHandle} />}
+
+<!-- Additional SEO -->
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+<!-- JSON-LD -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@plugin": "WebApp",
+  "@type": "SoftwareApplication",
+  "name": "Pomodoro Timer",
+  "description": description,
+  "operatingSystem": "All",
+  "applicationCategory": "ProductivityApplication",
+  "url": Astro.site,
+  "author": {
+    "@type": "Person",
+    "name": "manpuc"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "ratingCount": "1"
+  }
+})} />

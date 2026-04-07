@@ -1,5 +1,6 @@
 ---
 import ThemeHead from '@/components/ThemeHead.astro';
+import SEO from '@/components/SEO.astro';
 import { PomodoroApp } from '@/components/pomodoro/pomodoro-app';
 import '@/styles/globals.css';
 ---
@@ -14,18 +15,24 @@ import '@/styles/globals.css';
 		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 		<meta name="apple-mobile-web-app-title" content="Pomodoro" />
 
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+		<SEO
+			title="Pomodoro Timer - スマートに集中するポモドーロ・タイマー"
+			description="集中力を最大化するポモドーロ・タイマー。iOS風の美しいデザイン、カスタムテーマ、オフライン対応のPWA。作業を細分化して、圧倒的な生産性を手に入れよう。"
+			image="/icon-512.png"
+		/>
 		<meta name="theme-color" content="#1a1b26" />
 		<link rel="icon" type="image/png" href="/favicon.png?v=2" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 		<link rel="manifest" href="/manifest.json" />
-		<title>Pomodoro Timer</title>
 		<ThemeHead />
 	</head>
 	<body>
+		<div class="sr-only">
+			<h1>Pomodoro Timer - スマートに集中するポモドーロ・タイマー</h1>
+			<p>集中力を最大化するポモドーロ・タイマー。タスク管理、統計機能、高度なカスタマイズ性を備えたPWAです。</p>
+		</div>
 		<PomodoroApp client:only="react" />
 
 		<script>
