@@ -481,27 +481,15 @@
 }
 
 /* Panel layout helper classes for easy adjustment */
-.panel-left {
-  /* Left panel - task list */
-}
 
-.panel-center {
-  /* Center panel - timer */
-}
-
-.panel-right {
-  /* Right panel - statistics */
-}
 
 /* Settings panel - enhanced liquid glass effect */
 .settings-panel {
   border: none;
-  background: linear-gradient(
-    135deg,
-    oklch(from var(--glass-bg) l c h / 0.85) 0%,
-    oklch(from var(--glass-bg) l c h / 0.75) 50%,
-    oklch(from var(--glass-bg) l c h / 0.8) 100%
-  );
+  background: linear-gradient(135deg,
+      oklch(from var(--glass-bg) l c h / 0.85) 0%,
+      oklch(from var(--glass-bg) l c h / 0.75) 50%,
+      oklch(from var(--glass-bg) l c h / 0.8) 100%);
   backdrop-filter: blur(40px) saturate(1.5);
   -webkit-backdrop-filter: blur(40px) saturate(1.5);
   box-shadow:
@@ -520,11 +508,9 @@
   right: 0;
   height: 40px;
   border-radius: 20px 20px 0 0;
-  background: linear-gradient(
-    180deg,
-    oklch(1 0 0 / 0.08) 0%,
-    transparent 100%
-  );
+  background: linear-gradient(180deg,
+      oklch(1 0 0 / 0.08) 0%,
+      transparent 100%);
   pointer-events: none;
 }
 
@@ -535,12 +521,10 @@
   left: 10%;
   right: 10%;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    oklch(1 0 0 / 0.3) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      oklch(1 0 0 / 0.3) 50%,
+      transparent 100%);
   pointer-events: none;
   border-radius: 20px 20px 0 0;
 }

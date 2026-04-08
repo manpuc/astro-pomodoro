@@ -159,7 +159,7 @@ export function TaskList() {
                 'border-muted-foreground/50 hover:border-primary'
               )}
             >
-              {task.completed && <CheckIcon className="w-3 h-3"  />}
+              {task.completed && <CheckIcon className="w-3 h-3" />}
             </button>
 
             <div className="flex-1 min-w-0">
@@ -172,7 +172,7 @@ export function TaskList() {
                       'w-3 h-3',
                       i < task.pomodoros ? 'text-timer-work' : 'text-muted-foreground/30'
                     )}
-                    
+
                   />
                 ))}
               </div>
@@ -185,7 +185,7 @@ export function TaskList() {
               }}
               className="p-1 text-muted-foreground/50 hover:text-destructive transition-colors"
             >
-              <TrashIcon className="w-4 h-4"  />
+              <TrashIcon className="w-4 h-4" />
             </button>
           </div>
         ))}
@@ -214,7 +214,7 @@ export function TaskList() {
                   onClick={() => toggleTaskComplete(task.id)}
                   className="w-5 h-5 rounded-full border-2 border-primary bg-primary flex items-center justify-center"
                 >
-                  <CheckIcon className="w-3 h-3 text-primary-foreground"  />
+                  <CheckIcon className="w-3 h-3 text-primary-foreground" />
                 </button>
 
                 <div className="flex-1 min-w-0">
@@ -225,7 +225,7 @@ export function TaskList() {
                   onClick={() => deleteTask(task.id)}
                   className="p-1 text-muted-foreground/50 hover:text-destructive transition-colors"
                 >
-                  <TrashIcon className="w-4 h-4"  />
+                  <TrashIcon className="w-4 h-4" />
                 </button>
               </div>
             ))}

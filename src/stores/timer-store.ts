@@ -22,17 +22,17 @@ export const timerStore = createStore<TimerState>()(
       setSeconds: (sec) => set({ seconds: sec }),
       toggleRunning: () => set((state) => ({ running: !state.running })),
       // setTimeoutでの発火は使わず、コンポーネント側 (<audio onEnded>) で正確に戻す
-      triggerAudio: () => set({ audioPlaying: true }), 
-      stopAudio: () => set({ audioPlaying: false }),   
+      triggerAudio: () => set({ audioPlaying: true }),
+      stopAudio: () => set({ audioPlaying: false }),
     }),
     {
       name: 'pomodoro-timer-storage',
-      storage: createJSONStorage(() => typeof window !== 'undefined' ? window.localStorage : { getItem: () => null, setItem: () => {}, removeItem: () => {} } as any),
+      storage: createJSONStorage(() => typeof window !== 'undefined' ? window.localStorage : { getItem: () => null, setItem: () => { }, removeItem: () => { } } as any),
       // 保存するフィールドと保存しないフィールドの分離
       partialize: (state) => ({
         seconds: state.seconds,
         sessions: state.sessions,
-        running: state.running, 
+        running: state.running,
       }),
     }
   )

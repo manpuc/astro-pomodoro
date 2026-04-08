@@ -4,19 +4,20 @@ export interface Props {
   description?: string;
   image?: string;
   canonicalURL?: string;
-  type?: 'website' | 'article' | 'software';
+  type?: "website" | "article" | "software";
 }
 
 const {
-  title = 'Pomodoro Timer | Focus & Productivity',
-  description = 'A minimalist, high-performance Pomodoro timer for focus and productivity. iOS-inspired design with customizable themes and local history.',
-  image = '/icon-512.png',
+  title = "Pomodoro Timer | Focus & Productivity",
+  description = "A minimalist, high-performance Pomodoro timer for focus and productivity. iOS-inspired design with customizable themes and local history.",
+  image = "/icon-512.png",
   canonicalURL = Astro.url.href,
-  type = 'website',
+  type = "website",
 } = Astro.props;
 
-const siteName = 'Pomodoro';
-const twitterHandle = '@manpuc'; // Example/Placeholder
+const siteName = "Pomodoro";
+const twitterHandle = "@manpuc";
+const ogImageURL = new URL(image, Astro.site);
 ---
 
 <!-- Global Metadata -->
@@ -26,20 +27,20 @@ const twitterHandle = '@manpuc'; // Example/Placeholder
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content={type === 'software' ? 'website' : type} />
-<meta property="og:url" content={canonicalURL} />
+<meta property="og:type" content={type === "software" ? "website" : type} />
+<meta property="og:url" content={Astro.url.href} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.site)} />
+<meta property="og:image" content={ogImageURL} />
 <meta property="og:site_name" content={siteName} />
 <meta property="og:locale" content="ja_JP" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:url" content={Astro.url.href} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.site)} />
+<meta property="twitter:image" content={ogImageURL} />
 {twitterHandle && <meta property="twitter:site" content={twitterHandle} />}
 
 <!-- Additional SEO -->
@@ -47,27 +48,26 @@ const twitterHandle = '@manpuc'; // Example/Placeholder
 <meta name="googlebot" content="index, follow" />
 
 <!-- JSON-LD -->
-<script type="application/ld+json" is:inline set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@plugin": "WebApp",
-  "@type": "SoftwareApplication",
-  "name": "Pomodoro Timer",
-  "description": description,
-  "operatingSystem": "All",
-  "applicationCategory": "ProductivityApplication",
-  "url": Astro.site,
-  "author": {
-    "@type": "Person",
-    "name": "manpuc"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "ratingCount": "1"
-  }
-})} />
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: title,
+    description: description,
+    applicationCategory: "ProductivityApplication",
+    operatingSystem: "Web, iOS, Android, Windows, macOS",
+    url: "https://pomodoro.manpuc.me",
+    author: {
+      "@type": "Person",
+      name: "manpuc",
+      url: "https://manpuc.me",
+    },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "JPY",
+    },
+  })}
+/>

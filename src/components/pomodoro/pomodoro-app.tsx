@@ -182,121 +182,121 @@ export function PomodoroApp() {
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <main className="pomodoro-app min-h-screen flex flex-col items-center p-4 md:p-8 lg:p-12 pt-20 lg:pt-12 lg:justify-center relative overflow-hidden" suppressHydrationWarning>
         {/* Background gradient */}
-      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 rounded-full bg-timer-work/5 blur-3xl" />
-        <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 rounded-full bg-timer-break/5 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/3 h-1/3 rounded-full bg-timer-long-break/5 blur-3xl" />
-      </div>
-
-      {/* Header - only show on desktop */}
-      <header className="header-container fixed top-0 left-0 right-0 z-30 p-4 md:p-6 hidden lg:flex items-center justify-between">
-        <h1 className="text-lg font-semibold text-foreground/80">Pomodoro</h1>
-        <div className="flex items-center gap-4 mr-16">
-          {isInstallable && (
-            <button
-              onClick={install}
-              className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              <svg className="w-4 h-4 transition-transform duration-200 group-hover:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              インストール
-            </button>
-          )}
+        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 rounded-full bg-timer-work/5 blur-3xl" />
+          <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 rounded-full bg-timer-break/5 blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/3 h-1/3 rounded-full bg-timer-long-break/5 blur-3xl" />
         </div>
-      </header>
 
-      {/* Timer - always centered */}
-      <div
-        className={cn(
-          'panel-center flex-shrink-0 z-10 mt-4 lg:mt-0',
-          displaySettings.animationsEnabled && 'container-animate-enter'
-        )}
-      >
-        <Timer />
-      </div>
+        {/* Header - only show on desktop */}
+        <header className="header-container fixed top-0 left-0 right-0 z-30 p-4 md:p-6 hidden lg:flex items-center justify-between">
+          <h1 className="text-lg font-semibold text-foreground/80">Pomodoro</h1>
+          <div className="flex items-center gap-4 mr-16">
+            {isInstallable && (
+              <button
+                onClick={install}
+                className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+              >
+                <svg className="w-4 h-4 transition-transform duration-200 group-hover:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                インストール
+              </button>
+            )}
+          </div>
+        </header>
 
-      {/* Desktop layout - draggable panels */}
-      {isDesktop && showTaskListAnimated && (
-        <DraggablePanel
-          id="task-panel"
-          defaultPosition={taskPanelDefault}
+        {/* Timer - always centered */}
+        <div
           className={cn(
-            'layout-transition',
-            displaySettings.animationsEnabled && !isTaskListExiting && 'container-animate-enter',
-            isTaskListExiting && 'container-animate-exit'
+            'panel-center flex-shrink-0 z-10 mt-4 lg:mt-0',
+            displaySettings.animationsEnabled && 'container-animate-enter'
           )}
         >
-          <div className="w-full h-full overflow-auto">
-            <TaskList />
-          </div>
-        </DraggablePanel>
-      )}
+          <Timer />
+        </div>
 
-      {isDesktop && showStatisticsAnimated && (
-        <DraggablePanel
-          id="stats-panel"
-          defaultPosition={statsPanelDefault}
-          className={cn(
-            'layout-transition',
-            displaySettings.animationsEnabled && !isStatisticsExiting && 'container-animate-enter',
-            isStatisticsExiting && 'container-animate-exit'
-          )}
-          style={{
-            animationDelay: displaySettings.animationsEnabled && !isStatisticsExiting ? '0.1s' : '0s',
-          }}
-        >
-          <div className="w-full h-full overflow-hidden">
-            <Suspense fallback={null}>
-              <Statistics />
-            </Suspense>
-          </div>
-        </DraggablePanel>
-      )}
-
-      {/* Mobile layout - stacked */}
-      {!isDesktop && (
-        <div className="flex flex-col items-center gap-8 w-full mt-8">
-          {showTaskListAnimated && (
-            <div
-              className={cn(
-                'panel-left w-full layout-transition',
-                displaySettings.animationsEnabled && !isTaskListExiting && 'container-animate-enter',
-                isTaskListExiting && 'container-animate-exit'
-              )}
-            >
+        {/* Desktop layout - draggable panels */}
+        {isDesktop && showTaskListAnimated && (
+          <DraggablePanel
+            id="task-panel"
+            defaultPosition={taskPanelDefault}
+            className={cn(
+              'layout-transition',
+              displaySettings.animationsEnabled && !isTaskListExiting && 'container-animate-enter',
+              isTaskListExiting && 'container-animate-exit'
+            )}
+          >
+            <div className="w-full h-full overflow-auto">
               <TaskList />
             </div>
-          )}
+          </DraggablePanel>
+        )}
 
-          {showStatisticsAnimated && (
-            <div
-              className={cn(
-                'panel-right w-full layout-transition',
-                displaySettings.animationsEnabled && !isStatisticsExiting && 'container-animate-enter',
-                isStatisticsExiting && 'container-animate-exit'
-              )}
-              style={{
-                animationDelay: displaySettings.animationsEnabled && !isStatisticsExiting ? '0.1s' : '0s',
-              }}
-            >
+        {isDesktop && showStatisticsAnimated && (
+          <DraggablePanel
+            id="stats-panel"
+            defaultPosition={statsPanelDefault}
+            className={cn(
+              'layout-transition',
+              displaySettings.animationsEnabled && !isStatisticsExiting && 'container-animate-enter',
+              isStatisticsExiting && 'container-animate-exit'
+            )}
+            style={{
+              animationDelay: displaySettings.animationsEnabled && !isStatisticsExiting ? '0.1s' : '0s',
+            }}
+          >
+            <div className="w-full h-full overflow-hidden">
               <Suspense fallback={null}>
                 <Statistics />
               </Suspense>
             </div>
-          )}
-        </div>
-      )}
+          </DraggablePanel>
+        )}
 
-      {/* Settings panel - fixed bottom right */}
-      <Suspense fallback={null}>
-        <Settings />
-      </Suspense>
+        {/* Mobile layout - stacked */}
+        {!isDesktop && (
+          <div className="flex flex-col items-center gap-8 w-full mt-8">
+            {showTaskListAnimated && (
+              <div
+                className={cn(
+                  'panel-left w-full layout-transition',
+                  displaySettings.animationsEnabled && !isTaskListExiting && 'container-animate-enter',
+                  isTaskListExiting && 'container-animate-exit'
+                )}
+              >
+                <TaskList />
+              </div>
+            )}
 
-      <Toaster />
-    </main>
+            {showStatisticsAnimated && (
+              <div
+                className={cn(
+                  'panel-right w-full layout-transition',
+                  displaySettings.animationsEnabled && !isStatisticsExiting && 'container-animate-enter',
+                  isStatisticsExiting && 'container-animate-exit'
+                )}
+                style={{
+                  animationDelay: displaySettings.animationsEnabled && !isStatisticsExiting ? '0.1s' : '0s',
+                }}
+              >
+                <Suspense fallback={null}>
+                  <Statistics />
+                </Suspense>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Settings panel - fixed bottom right */}
+        <Suspense fallback={null}>
+          <Settings />
+        </Suspense>
+
+        <Toaster />
+      </main>
     </ThemeProvider>
   )
 }

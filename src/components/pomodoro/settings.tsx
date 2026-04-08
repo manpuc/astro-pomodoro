@@ -726,7 +726,7 @@ export function Settings() {
                   デフォルトに戻す
                 </button>
               </div>
-              
+
               <div className="space-y-5">
                 <div>
                   <label className="text-xs text-muted-foreground block mb-2">作業時のカラー</label>
@@ -743,8 +743,8 @@ export function Settings() {
                         title={color.name}
                       />
                     ))}
-                    <input 
-                      type="color" 
+                    <input
+                      type="color"
                       value={displaySettings.workColor || (isDark ? '#f87171' : '#b15c00')}
                       onChange={(e) => updateDisplaySettings({ workColor: e.target.value })}
                       className="w-6 h-6 rounded-full bg-transparent border-none cursor-pointer p-0"
@@ -767,8 +767,8 @@ export function Settings() {
                         title={color.name}
                       />
                     ))}
-                    <input 
-                      type="color" 
+                    <input
+                      type="color"
                       value={displaySettings.breakColor || (isDark ? '#4ade80' : '#587539')}
                       onChange={(e) => updateDisplaySettings({ breakColor: e.target.value })}
                       className="w-6 h-6 rounded-full bg-transparent border-none cursor-pointer p-0"
@@ -791,8 +791,8 @@ export function Settings() {
                         title={color.name}
                       />
                     ))}
-                    <input 
-                      type="color" 
+                    <input
+                      type="color"
                       value={displaySettings.longBreakColor || (isDark ? '#60a5fa' : '#2e7de9')}
                       onChange={(e) => updateDisplaySettings({ longBreakColor: e.target.value })}
                       className="w-6 h-6 rounded-full bg-transparent border-none cursor-pointer p-0"
@@ -803,8 +803,8 @@ export function Settings() {
                 <div>
                   <label className="text-xs text-muted-foreground block mb-2">背景カラー (カスタム)</label>
                   <div className="flex items-center gap-3">
-                    <input 
-                      type="color" 
+                    <input
+                      type="color"
                       value={displaySettings.customBackgroundColor || (isDark ? '#0f172a' : '#e1e2e7')}
                       onChange={(e) => updateDisplaySettings({ customBackgroundColor: e.target.value })}
                       className="w-10 h-10 rounded-xl bg-transparent border-none cursor-pointer p-0 overflow-hidden shadow-inner"
@@ -814,7 +814,7 @@ export function Settings() {
                         背景全体の色を変更します。空にするとテーマ標準色に戻ります。
                       </p>
                       {displaySettings.customBackgroundColor && (
-                        <button 
+                        <button
                           onClick={() => updateDisplaySettings({ customBackgroundColor: '' })}
                           className="text-[10px] text-primary hover:underline mt-1"
                         >

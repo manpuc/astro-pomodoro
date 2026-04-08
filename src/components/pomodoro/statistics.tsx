@@ -196,21 +196,21 @@ export function Statistics() {
                 onClick={shareToTwitter}
                 className="w-full px-3 py-2 text-left text-sm hover:bg-secondary/50 rounded-lg transition-colors flex items-center gap-2"
               >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
                 Twitter
               </button>
               <button
                 onClick={shareToLine}
                 className="w-full px-3 py-2 text-left text-sm hover:bg-secondary/50 rounded-lg transition-colors flex items-center gap-2"
               >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" /></svg>
                 LINE
               </button>
               <button
                 onClick={copyToClipboard}
                 className="w-full px-3 py-2 text-left text-sm hover:bg-secondary/50 rounded-lg transition-colors flex items-center gap-2"
               >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></svg>
                 URLをコピー
               </button>
             </div>
@@ -299,7 +299,7 @@ export function Statistics() {
         <div className="relative h-28">
           {/* Hover tooltip */}
           {hoveredDay !== null && weekData[hoveredDay] && (
-            <div 
+            <div
               className="absolute z-[100] px-3 py-2 bg-popover/95 border border-border rounded-xl shadow-xl text-xs pointer-events-none whitespace-nowrap backdrop-blur-md min-w-[120px]"
               style={{
                 left: `${(hoveredDay / 6) * 100}%`,
@@ -332,7 +332,7 @@ export function Statistics() {
             <line x1="0" y1="20" x2="100" y2="20" stroke="currentColor" strokeOpacity="0.1" strokeDasharray="2 2" vectorEffect="non-scaling-stroke" />
             <line x1="0" y1="45" x2="100" y2="45" stroke="currentColor" strokeOpacity="0.1" strokeDasharray="2 2" vectorEffect="non-scaling-stroke" />
             <line x1="0" y1="70" x2="100" y2="70" stroke="currentColor" strokeOpacity="0.1" strokeDasharray="2 2" vectorEffect="non-scaling-stroke" />
-            
+
             {/* Gradient fill under the line */}
             <defs>
               <linearGradient id={chartGradientId} x1="0" y1="0" x2="0" y2="1">
@@ -340,7 +340,7 @@ export function Statistics() {
                 <stop offset="100%" stopColor={chartColor} stopOpacity="0.05" />
               </linearGradient>
             </defs>
-            
+
             {/* Area fill */}
             {weekData.length > 0 && (() => {
               const points = chartValues.map((value, i) => ({
@@ -352,18 +352,18 @@ export function Statistics() {
                   d={`
                     M ${points[0].x} ${points[0].y}
                     ${points.map((point, i) => {
-                      if (i === 0) return ''
-                      const prev = points[i - 1]
-                      const cpX = (prev.x + point.x) / 2
-                      return `C ${cpX} ${prev.y} ${cpX} ${point.y} ${point.x} ${point.y}`
-                    }).join(' ')}
+                    if (i === 0) return ''
+                    const prev = points[i - 1]
+                    const cpX = (prev.x + point.x) / 2
+                    return `C ${cpX} ${prev.y} ${cpX} ${point.y} ${point.x} ${point.y}`
+                  }).join(' ')}
                     L ${points[points.length - 1].x} 90 L ${points[0].x} 90 Z
                   `}
                   fill={`url(#${chartGradientId})`}
                 />
               )
             })()}
-            
+
             {/* Smooth line */}
             {weekData.length > 0 && (() => {
               const points = chartValues.map((value, i) => ({
@@ -375,11 +375,11 @@ export function Statistics() {
                   d={`
                     M ${points[0].x} ${points[0].y}
                     ${points.map((point, i) => {
-                      if (i === 0) return ''
-                      const prev = points[i - 1]
-                      const cpX = (prev.x + point.x) / 2
-                      return `C ${cpX} ${prev.y} ${cpX} ${point.y} ${point.x} ${point.y}`
-                    }).join(' ')}
+                    if (i === 0) return ''
+                    const prev = points[i - 1]
+                    const cpX = (prev.x + point.x) / 2
+                    return `C ${cpX} ${prev.y} ${cpX} ${point.y} ${point.x} ${point.y}`
+                  }).join(' ')}
                   `}
                   fill="none"
                   stroke={chartColor}
@@ -422,8 +422,8 @@ export function Statistics() {
             {weekData.map((day, i) => {
               const value = chartValues[i]
               const y = 80 - Math.max((value / maxValue) * 60, 0)
-              const displayValue = chartMode === 'pomodoros' 
-                ? value 
+              const displayValue = chartMode === 'pomodoros'
+                ? value
                 : Math.round(value)
               return (
                 <div key={i} className="flex-1 relative">
@@ -440,7 +440,7 @@ export function Statistics() {
             })}
           </div>
         </div>
-        
+
         {/* Day labels - separate from SVG for better control */}
         <div className="flex justify-between mt-1">
           {weekData.map((day, i) => (

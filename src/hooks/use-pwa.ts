@@ -12,7 +12,7 @@ if (typeof window !== 'undefined') {
     e.preventDefault()
     globalDeferredPrompt = e as BeforeInstallPromptEvent
     hasDispatchedPrompt = true;
-    
+
     // すでにマウントされているコンポーネントがあれば通知するためにカスタムイベントを発火
     window.dispatchEvent(new CustomEvent('pwa-install-ready'))
   })

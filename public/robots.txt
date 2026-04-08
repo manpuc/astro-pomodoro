@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /_astro/
+Disallow: /api/
 
 Sitemap: https://pomodoro.manpuc.me/sitemap-index.xml
