@@ -44,7 +44,7 @@ const ogImageURL = new URL(image, Astro.site);
 {twitterHandle && <meta property="twitter:site" content={twitterHandle} />}
 
 <!-- Additional SEO -->
-<meta name="robots" content="index, follow" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="googlebot" content="index, follow" />
 
 <!-- JSON-LD -->
@@ -53,21 +53,44 @@ const ogImageURL = new URL(image, Astro.site);
   is:inline
   set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: title,
-    description: description,
-    applicationCategory: "ProductivityApplication",
-    operatingSystem: "Web, iOS, Android, Windows, macOS",
-    url: "https://pomodoro.manpuc.me",
-    author: {
-      "@type": "Person",
-      name: "manpuc",
-      url: "https://manpuc.me",
-    },
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "JPY",
-    },
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://pomodoro.manpuc.me/#software",
+        "name": title,
+        "description": description,
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "Web, iOS, Android, Windows, macOS",
+        "url": "https://pomodoro.manpuc.me",
+        "author": {
+          "@type": "Person",
+          "@id": "https://manpuc.me/#person",
+          "name": "manpuc",
+          "url": "https://manpuc.me"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "JPY"
+        },
+        "featureList": [
+          "Pomodoro Timer",
+          "Task Management",
+          "Customizable Themes",
+          "Statistics & History",
+          "PWA / Offline Support"
+        ],
+        "screenshot": ogImageURL
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://pomodoro.manpuc.me/#website",
+        "url": "https://pomodoro.manpuc.me",
+        "name": siteName,
+        "publisher": {
+          "@id": "https://manpuc.me/#person"
+        }
+      }
+    ]
   })}
 />

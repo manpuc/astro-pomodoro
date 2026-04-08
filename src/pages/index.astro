@@ -34,13 +34,60 @@ import "@/styles/globals.css";
 		<ThemeHead />
 	</head>
 	<body>
-		<div class="sr-only">
-			<h1>Pomodoro Timer - スマートに集中するポモドーロ・タイマー</h1>
-			<p>
-				集中力を最大化するポモドーロ・タイマー。タスク管理、統計機能、高度なカスタマイズ性を備えたPWAです。
-			</p>
-		</div>
-		<PomodoroApp client:only="react" />
+		<main>
+			<div class="sr-only">
+				<h1>Pomodoro Timer - スマートに集中するポモドーロ・タイマー</h1>
+			</div>
+
+			<PomodoroApp client:only="react" />
+
+			<!-- SEO Content Section - Visible to crawlers and users who scroll down -->
+			<footer
+				class="mt-20 pb-20 px-6 max-w-4xl mx-auto text-muted-foreground border-t border-border pt-10"
+			>
+				<section class="grid gap-12">
+					<div class="space-y-4">
+						<h2 class="text-2xl font-bold text-foreground">
+							ポモドーロ・タイマーで集中力を最大化
+						</h2>
+						<p class="leading-relaxed">
+							ポモドーロ・テクニックは、25分の集中作業と5分の短い休憩を繰り返すことで、精神的な疲労を抑え、高い生産性を維持するための時間管理術です。このタイマーは、直感的な操作感と美しいデザインで、あなたの作業効率を強力にサポートします。
+						</p>
+					</div>
+
+					<div class="grid md:grid-cols-2 gap-8">
+						<div class="space-y-4">
+							<h3 class="text-xl font-semibold text-foreground">
+								主な特徴
+							</h3>
+							<ul class="list-disc list-inside space-y-2">
+								<li>集中時間を自由にカスタマイズ可能</li>
+								<li>タスクごとの履歴と統計を確認</li>
+								<li>PWA対応によりオフラインでも動作</li>
+								<li>洗練されたダークテーマ</li>
+							</ul>
+						</div>
+						<div class="space-y-4">
+							<h3 class="text-xl font-semibold text-foreground">
+								おすすめの使い方
+							</h3>
+							<ul class="list-disc list-inside space-y-2">
+								<li>1つのタスクに集中して25分間取り組む</li>
+								<li>休憩時間は画面から離れてリフレッシュ</li>
+								<li>4回のポモドーロごとに長めの休憩を取る</li>
+								<li>統計機能で自分の集中パターンを分析</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<p class="mt-20 text-center text-sm">
+					&copy; {new Date().getFullYear()} Pomodoro by <a
+						href="https://manpuc.me"
+						class="hover:underline text-primary">manpuc</a
+					>. All rights reserved.
+				</p>
+			</footer>
+		</main>
 
 		<script src="../client.ts"></script>
 		<!-- Cloudflare Web Analytics -->
