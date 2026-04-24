@@ -22,3 +22,16 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+.vscode/
+.agent/
+.worktree-agent/
+
+# dev
+astro_check_output.txt
+astro_check_utf8.txt
+build.log
+build2.log
+
+# local dev & build outputs
+.vercel/
+dev-dist/
